@@ -5,5 +5,5 @@ def rendre_somme(argent):
         if argent>=i:
             avg=argent//i
             argent-=avg*i
-            result.append((i,"billets de",avg))
+            result.append((avg,"billets de",i))
     return result

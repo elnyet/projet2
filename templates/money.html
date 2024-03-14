@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Calcul du rendu de monnaie</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+<h1>Calcul du rendu de monnaie</h1>
+<form method="get" action="/money">
+   <label for="money">Argent à diviser : </label>
+   <input type="number" name="money" required><br>
+</form>
+{% if money != 1 %}
+   <p>Voici votre rendu d'argent <strong>{{ money }}</strong></p>
+{% endif %}
+</body>
+
+</html>

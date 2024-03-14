@@ -1,0 +1,18 @@
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+form {
+    border:5px solid red;
+    text-align: center;
+    padding: 20px;
+}
+
+html {
+    background-color: grey;
+}
+
+p {
+    text-align: center;
+}

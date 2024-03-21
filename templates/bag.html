@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Calcul du rendu de monnaie</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='bag.css') }}">
+</head>
+
+<body>
+<h1>Problème du sac : </h1>
+<form method="get" action="/bag">
+
+   <label for="item1">Objet 1 (masse/prix) : </label>
+        <input type="number" name="weight_item1" required>
+        <input type="number" name="price_item1" required><br>
+   <label for="item2">Objet 2 (masse/prix) : </label>
+        <input type="number" name="weight_item2" required>
+        <input type="number" name="price_item2" required><br>
+   <label for="item3">Objet 3 (masse/prix) : </label>
+        <input type="number" name="weight_item3" required>
+        <input type="number" name="price_item3" required><br>
+   <label for="item4">Objet 4 (masse/prix) : </label>
+        <input type="number" name="weight_item4" required>
+        <input type="number" name="price_item4" required><br>
+    <br>
+
+    <label for="baglimit">Limite de poids :</label>
+    <input type="number" name="baglimit" required>
+
+</form>
+
+</body>
+
+</html>

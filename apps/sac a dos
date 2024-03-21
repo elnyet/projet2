@@ -1,0 +1,28 @@
+def sort_items(item):
+    return item[1], -item[0], -item[2]
+
+def knapsack(values, weights, prices, capacity):
+    num_items = len(values)
+    items = sorted(zip(values, weights, prices), key=sort_items)  # Tri des objets
+
+    max_value = 0
+    selected_items = []
+    total_weight = 0
+
+    for item in items:
+        item_value, item_weight, item_price = item
+        if total_weight + item_weight <= capacity:
+            max_value += item_value
+            selected_items.append(item)
+            total_weight += item_weight
+
+    return max_value, selected_items
+
+# Exemple d'utilisation
+values = [60, 100, 120, 200]
+weights = [10, 20, 30, 40]
+prices = [200, 300, 400, 500]
+capacity = 50
+max_value, selected_items = knapsack(values, weights, prices, capacity)
+print("La valeur maximale qui peut être placée dans le sac est :", max_value)
+print("Les objets à placer dans le sac sont :", selected_items)

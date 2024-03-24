@@ -3,7 +3,7 @@
 
 <head>
    <meta charset="utf-8">
-   <title>Calcul du rendu de monnaie</title>
+   <title>Problème du sac</title>
    <link rel="stylesheet" href="{{ url_for('static', filename='bag.css') }}">
 </head>
 
@@ -28,24 +28,28 @@
     <label for="baglimit">Limite de poids :</label>
     <input type="number" name="baglimit" required>
 
+    <br>
+   
+    <br><input type="submit" value="Terminer">
+
 </form>
 
-   {% if result_price %}
-   <h2>Résultat du tri par prix :</h2>
+{% if result_price %}
+   <h2>Contenu du sac en tri par prix :</h2>
    {% for item in result_price %}
       <p>Objet poids: {{ item['weight'] }}, prix: {{ item['price'] }}</p>
    {% endfor %}
 {% endif %}
 
 {% if result_weight %}
-   <h2>Résultat du tri par poids :</h2>
+   <h2>Contenu du sac en tri par poids :</h2>
    {% for item in result_weight %}
       <p>Objet poids: {{ item['weight'] }}, prix: {{ item['price'] }}</p>
    {% endfor %}
 {% endif %}
 
 {% if result_ratio %}
-   <h2>Résultat du tri par ratio :</h2>
+   <h2>Contenu du sac en tri par ratio :</h2>
    {% for item in result_ratio %}
       <p>Objet poids: {{ item['weight'] }}, prix: {{ item['price'] }}</p>
    {% endfor %}

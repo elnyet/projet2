@@ -20,12 +20,13 @@ def money_form():
 def bag_form():
 
     items=[
-        {"weight":float(request.args.get('weight_item1')),"price":float(request.args.get('price_item1'))},
-        {"weight":float(request.args.get('weight_item2')),"price":float(request.args.get('price_item2'))},
-        {"weight":float(request.args.get('weight_item3')),"price":float(request.args.get('price_item3'))},
-        {"weight":float(request.args.get('weight_item4')),"price":float(request.args.get('price_item4'))},
+            {"weight":float(request.form['weight_item1']),"price":float(request.form['price_item1'])},
+            {"weight":float(request.form['weight_item2']),"price":float(request.form['price_item2'])},
+            {"weight":float(request.form['weight_item3']),"price":float(request.form['price_item3'])},
+            {"weight":float(request.form['weight_item4']),"price":float(request.form['price_item4'])},
     ]
-    baglimit=float(request.args.get('baglimit'))
+    
+    baglimit=float(request.form['baglimit'])
 
     sorted_price=sort_by_price(items)
     result_price=greedy_kp(sorted_price, baglimit)
@@ -36,7 +37,4 @@ def bag_form():
     sorted_ratio=sort_by_ratio(items)
     result_ratio=greedy_kp(sorted_ratio, baglimit)
 
-    
-
-
-    return render_template('bag.html')
+    return render_template('bag.html', result_price=result_price, result_weight=result_weight, result_ratio=result_ratio)

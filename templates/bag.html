@@ -30,6 +30,27 @@
 
 </form>
 
+   {% if result_price %}
+   <h2>Résultat du tri par prix :</h2>
+   {% for item in result_price %}
+      <p>Objet poids: {{ item['weight'] }}, prix: {{ item['price'] }}</p>
+   {% endfor %}
+{% endif %}
+
+{% if result_weight %}
+   <h2>Résultat du tri par poids :</h2>
+   {% for item in result_weight %}
+      <p>Objet poids: {{ item['weight'] }}, prix: {{ item['price'] }}</p>
+   {% endfor %}
+{% endif %}
+
+{% if result_ratio %}
+   <h2>Résultat du tri par ratio :</h2>
+   {% for item in result_ratio %}
+      <p>Objet poids: {{ item['weight'] }}, prix: {{ item['price'] }}</p>
+   {% endfor %}
+{% endif %}
+
 </body>
 
 </html>
